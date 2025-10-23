@@ -13,7 +13,10 @@
         <div class="archive-section section-one">
             <h2>Description</h2>
             <p><b>FakeChan Archive</b> is a manually operated archive of threads on the FakeChan site that were visited and used by guests. Only "guest party board snapshots" are archived, and ones with high amounts of users. Your uploads to FakeChan will likely remain there for a long while, but eventually have to be removed if we get too close to the storage limits. Moderation on FakeChan is very lax, but I will instantly delete any unlikable images from the feed if they are uploaded. FakeChan does not preserve moderation acts or deletes, your un-approved material will be quietly and swiftly deleted from the uploads feed in the Cloudinary dashboard.</p>
-          <img src="https://yourimageshare.com/ib/kczfHRhUEA.jpg" alt="Italian Trulli">
+         <div class="gradient-border-box">
+   <img src="https://yourimageshare.com/ib/kczfHRhUEA.jpg" alt="Italian Trulli">
+</div>
+        
         </div>
         
         <div class="archive-section section-two">
@@ -27,6 +30,7 @@
         </div>
     </div>
   <style>
+    
     /* Basic styling for the body and container */
 body {
     font-family: Arial, sans-serif;
@@ -35,13 +39,24 @@ body {
     background-color: #0d0d0d; /* A very dark gray background */
     color: #f0f0f0; /* Light text for readability */
 }
-
+.gradient-border-box {
+  /* Set a transparent border to create space for the gradient */
+  width:270px;
+  border: 2px solid transparent; 
+  border-radius: 15px; /* Adjust for desired roundness */
+  padding: 4px; /* Add padding for content */
+  background-image: linear-gradient(to right, #303030, #ADADAD); /* Your gradient colors */
+  background-origin: border-box; /* Start gradient from the border edge */
+  background-clip: padding-box, border-box; /* Clip the gradient to the border box, and a solid background to the padding box */
+  background-color: #ffffff; /* Fallback or inner background color */
+}
 .archive-container {
     display: grid; /* Use flexbox for a horizontal layout */
     gap: 20px; /* Spacing between the sections */
     flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
   background: linear-gradient(135deg, #1c1c1c, #7D7C7C);
+  
 }
 
 /* Base styling for all sections */
@@ -51,6 +66,7 @@ body {
     padding: 30px;
     border-radius: 8px; /* Slightly rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  
 }
 
 /* Dark gradient for the first section */

@@ -39,7 +39,7 @@ function walk(node, word) {
     let currentNode = node.childNodes[i];
 
     // If it's a text node and contains the word
-    if (currentNode.nodeType === Node.TEXT_NODE && currentNode.textContent.includes(word)) {
+    if (currentNode.nodeType === Node.TEXT_NODE && currentNode.innerHTML.includes(word)) {
       // Create the new H1 element
       const h1 = document.createElement('h1');
       h1.classList.add('desu-text'); // Add your desired class here

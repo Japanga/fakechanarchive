@@ -29,81 +29,34 @@
         </div>
         
       <script>
-        /**
- * Wraps every instance of a specific phrase in an <h1> tag with a given class.
- * @param {string} phrase The phrase to search for.
- * @param {string} className The class name to add to the h1 tag.
- */
-function wrapPhraseInH1(phrase, className) {
-    // Escape special characters in the phrase for use in a RegExp
-    const escapedPhrase = phrase.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-    const regex = new RegExp(escapedPhrase, 'gi'); // 'g' for global, 'i' for case-insensitive
+window.onload = function() {
+  walk(document.body, "$DESU$");
+};
 
-    const walker = document.createTreeWalker(
-        document.body,
-        NodeFilter.SHOW_TEXT,
-        null,
-        false
-    );
+function walk(node, word) {
+  // Iterate over all child nodes
+  for (let i = 0; i < node.childNodes.length; i++) {
+    let currentNode = node.childNodes[i];
 
-    let node;
-    const nodesToWrap = [];
+    // If it's a text node and contains the word
+    if (currentNode.nodeType === Node.TEXT_NODE && currentNode.textContent.includes(word)) {
+      // Create the new H1 element
+      const h1 = document.createElement('h1');
+      h1.classList.add('desu-text'); // Add your desired class here
+      h1.textContent = word;
 
-    // Traverse all text nodes in the body
-    while ((node = walker.nextNode())) {
-        if (regex.test(node.nodeValue)) {
-            nodesToWrap.push(node);
-        }
+      // Replace the old text node with the new H1 element
+      node.replaceChild(h1, currentNode);
     }
-
-    // Process the nodes found
-    nodesToWrap.forEach(node => {
-        const parent = node.parentNode;
-        if (!parent || parent.nodeName.toLowerCase() === 'h1') return; // Skip if already inside an h1
-
-        const text = node.nodeValue;
-        const matches = text.match(regex);
-
-        if (!matches) return;
-
-        // Split the text node by the matches and insert new elements
-        let lastIndex = 0;
-        matches.forEach(match => {
-            const matchIndex = text.indexOf(match, lastIndex);
-            if (matchIndex === -1) return;
-
-            // Text before the match
-            const beforeText = text.slice(lastIndex, matchIndex);
-            if (beforeText) {
-                parent.insertBefore(document.createTextNode(beforeText), node);
-            }
-
-            // The new h1 element with the class
-            const h1Element = document.createElement('h1');
-            h1Element.className = className;
-            h1Element.textContent = match;
-            parent.insertBefore(h1Element, node);
-
-            lastIndex = matchIndex + match.length;
-        });
-
-        // Remaining text after the last match
-        const afterText = text.slice(lastIndex);
-        if (afterText) {
-            parent.insertBefore(document.createTextNode(afterText), node);
-        }
-
-        // Remove the original text node
-        parent.removeChild(node);
-    });
+    // If it's an element node, recursively call the walk function on its children
+    else if (currentNode.nodeType === Node.ELEMENT_NODE) {
+      walk(currentNode, word);
+    }
+  }
 }
 
-// Example usage:
-// Call this function when the DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    wrapPhraseInH1('$DESU$', 'desu-text');
-});
   </script>
+  
   <style>
     .desu-text {
     font-size: 20px;

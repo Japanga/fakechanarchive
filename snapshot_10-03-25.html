@@ -29,14 +29,23 @@
         </div>
         
       <script>
-function replaceWordWithH1() {
-  // Replace 'your-word' with the word you want to replace
-  // Replace 'your-h1-class' with the class you want to add to the h1 tag
-  // The 'g' flag ensures all occurrences are replaced, not just the first one.
-  let newHtml = document.body.innerHTML.replace(/$DESU$/g, '<h1 class="desu-text">$DESU$</h1>');
-  document.body.innerHTML = newHtml;
+// Find all text nodes within a specific container (e.g., a div with id="comment-container")
+const container = document.getElementById('HCB_comment_box');
+const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+
+const wordToReplace = "$DESU$";
+const newHeading = "<h1 class=\"desu-text\">$DESU$</h1>"; // Replace with your desired H1 tag
+
+let node;
+while ((node = walker.nextNode())) {
+  // Check if the text node contains the word we want to replace
+  if (node.textContent.includes(wordToReplace)) {
+    // Replace the text node with the new H1 element
+    const newNode = document.createElement('span'); // Create a temporary span
+    newNode.innerHTML = node.textContent.replace(wordToReplace, newHeading);
+    node.parentNode.replaceChild(newNode, node);
+  }
 }
-window.onload = replaceWordWithH1;
   </script>
   
   <style>

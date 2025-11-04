@@ -17,6 +17,7 @@
    <img src="https://yourimageshare.com/ib/1EpHNkSgpP.png" style="height: 230px; width: 270px">
 </div>
         You can use a special type of texting in these archive threads, called Desutexting by putting this in your post: <h1 class="desu-text">$DESU$</h1>
+          $DESU$
         </div>
         
         <div class="archive-section section-two">
@@ -29,23 +30,42 @@
         </div>
         
       <script>
-// Find all text nodes within a specific container (e.g., a div with id="comment-container")
-const container = document.getElementById('HCB_comment_box');
-const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+function replaceWordWithH1(wordToReplace) {
+  const H1_TAG = `<h1 class="desu-text">`;
+  const H1_END_TAG = `</h1>`;
+  const H1_CLASS = "desu-text";
 
-const wordToReplace = "$DESU$";
-const newHeading = "<h1 class=\"desu-text\">$DESU$</h1>"; // Replace with your desired H1 tag
+  // This function will recursively traverse the DOM and replace the word
+  function walk(node) {
+    // 1. Iterate over all child nodes
+    for (let i = 0; i < node.childNodes.length; i++) {
+      const childNode = node.childNodes[i];
 
-let node;
-while ((node = walker.nextNode())) {
-  // Check if the text node contains the word we want to replace
-  if (node.textContent.includes(wordToReplace)) {
-    // Replace the text node with the new H1 element
-    const newNode = document.createElement('span'); // Create a temporary span
-    newNode.innerHTML = node.textContent.replace(wordToReplace, newHeading);
-    node.parentNode.replaceChild(newNode, node);
+      // 2. Only process text nodes
+      if (childNode.nodeType === Node.TEXT_NODE) {
+        // 3. If the node contains the word to replace
+        if (childNode.textContent.includes(wordToReplace)) {
+          // 4. Create a new H1 element
+          const newH1 = document.createElement('h1');
+          newH1.classList.add(H1_CLASS);
+          newH1.textContent = wordToReplace;
+
+          // 5. Replace the text node with the new H1 element
+          childNode.parentNode.replaceChild(newH1, childNode);
+        }
+      } else {
+        // 6. If the node is an element, recursively call walk on its children
+        if (childNode.nodeType === Node.ELEMENT_NODE) {
+          walk(childNode);
+        }
+      }
+    }
   }
+
+  // Start the process from the body of the document
+  walk(document.body);
 }
+        replaceWordWithH1("$DESU$");
   </script>
   
   <style>

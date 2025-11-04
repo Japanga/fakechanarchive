@@ -29,32 +29,38 @@
         </div>
         
       <script>
-window.onload = function() {
-  walk(document.body, "$DESU$");
-};
-
-function walk(node, word) {
-  // Iterate over all child nodes
-  for (let i = 0; i < node.childNodes.length; i++) {
-    let currentNode = node.childNodes[i];
-
-    // If it's a text node and contains the word
-    if (currentNode.nodeType === Node.TEXT_NODE && currentNode.innerHTML.includes(word)) {
-      // Create the new H1 element
-      const h1 = document.createElement('h1');
-      h1.classList.add('desu-text'); // Add your desired class here
-      h1.textContent = word;
-
-      // Replace the old text node with the new H1 element
-      node.replaceChild(h1, currentNode);
-    }
-    // If it's an element node, recursively call the walk function on its children
-    else if (currentNode.nodeType === Node.ELEMENT_NODE) {
-      walk(currentNode, word);
-    }
+function replaceWordInTextNodes(wordToReplace, replacementHtml, className) {
+  // Get all text nodes in the document
+  let walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  let nodes = [];
+  let node;
+  while (node = walker.nextNode()) {
+    nodes.push(node);
   }
+
+  // Loop through each text node and perform the replacement
+  nodes.forEach(node => {
+    if (node.textContent.includes(wordToReplace)) {
+      // Create a new element for the replacement HTML
+      let h1 = document.createElement('h1');
+      h1.className = className;
+      h1.textContent = wordToReplace;
+
+      // Create a new text node with the replacement HTML
+      let parent = node.parentNode;
+      parent.insertBefore(h1, node);
+      parent.insertBefore(document.createTextNode(' '), h1.nextSibling); // add a space
+
+      // Remove the old text node
+      parent.removeChild(node);
+    }
+  });
 }
 
+// Example usage:
+window.onload = function() {
+  replaceWordInTextNodes('$DESU$', '<h1>$DESU$</h1>', 'desu-text');
+};
   </script>
   
   <style>

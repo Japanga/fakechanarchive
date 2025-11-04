@@ -31,25 +31,9 @@
         
       <script>
 window.onload = function() {
-  // 1. Target the specific div by its ID
-  const divElement = document.getElementById('HCB_comment_box');
-
-  // 2. Check if the div exists on the page
-  if (divElement) {
-    const wordToReplace = '$DESU$';
-    const h1Class = 'desu-text';
-
-    // 3. Create the replacement string with an h1 tag and the specified class
-    const replacement = `<h1 class="${h1Class}">${wordToReplace}</h1>`;
-
-    // 4. Use a regular expression to find the word globally (g flag)
-    //    and create a new string with the replacement.
-    const regex = new RegExp(wordToReplace, 'g');
-    const newHTML = divElement.innerHTML.replace(regex, replacement);
-
-    // 5. Update the div's content with the new HTML
-    divElement.innerHTML = newHTML;
-  }
+  const wordToReplace = "$DESU$";
+  const replacementHTML = '<h1 class="desu-text">$DESU$</h1>';
+  document.body.innerHTML = document.body.innerHTML.replaceAll(wordToReplace, replacementHTML);
 };
   </script>
   

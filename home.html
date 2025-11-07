@@ -12,7 +12,7 @@
     <div class="archive-container">
         <div class="archive-section section-one">
             <h2>Description</h2>
-            <p><b>FakeChan Archive</b> is a manually operated archive of threads on the FakeChan site that were visited and used by guests. Only "guest party board snapshots" are archived, and ones with high amounts of users. Your uploads to FakeChan will likely remain there for a long while, but eventually have to be removed if we get too close to the storage limits. Moderation on FakeChan is very lax, but I will instantly delete any unlikable images from the feed if they are uploaded. FakeChan does not preserve moderation acts or deletes, your un-approved material will be quietly and swiftly deleted from the uploads feed in the Cloudinary dashboard. If you type <h1 class="desu-text"> $DESU$</h1><p> on your post in the archive comments, it will turn into an animated glowing effect.</p>
+            <b>FakeChan Archive</b> is a manually operated archive of threads on the FakeChan site that were visited and used by guests. Only "guest party board snapshots" are archived, and ones with high amounts of users. Your uploads to FakeChan will likely remain there for a long while, but eventually have to be removed if we get too close to the storage limits. Moderation on FakeChan is very lax, but I will instantly delete any unlikable images from the feed if they are uploaded. FakeChan does not preserve moderation acts or deletes, your un-approved material will be quietly and swiftly deleted from the uploads feed in the Cloudinary dashboard. If you type $DESU$ on your post in the archive comments, it will turn into an animated glowing effect. We were <u><b>unable</b></u> to add $DESU$ texting to the main FakeChan site because it conflicted with the code for the Cloudinary image uploading, so you will only be able to use the $DESU$ features as a special treat extra on the Archive site. This gives the Archive an element that makes it unique and special compared to the base site.
          <div class="gradient-border-box">
    <img src="https://yourimageshare.com/ib/kczfHRhUEA.jpg" alt="Italian Trulli">
 </div>
@@ -33,10 +33,19 @@
            </div>
         </div>
     </div>
+  
+     <script>
+window.onload = function() {
+  const wordToReplace = "$DESU$";
+  const replacementHTML = '<h1 class="desu-text">$DESU$</h1>';
+  document.body.innerHTML = document.body.innerHTML.replaceAll(wordToReplace, replacementHTML);
+};
+  </script>
+  
   <style>
         .desu-text {
     font-size: 20px;
-    display: inline;
+              display: inline;
     text-align: center;
     color: #fff; /* Initial text color */
     animation: colorGlow 3s infinite alternate ease-in-out; /* Animation properties */

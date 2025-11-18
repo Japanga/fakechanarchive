@@ -1,0 +1,497 @@
+<!-- Start writing your code here -->
+<!-- Start writing your code here -->
+<!-- Start writing your code here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="shortcut icon" type="image/x-icon" href="https://yourimageshare.com/ib/GrUg6gfJ1o.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeChan</title>
+     
+
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  
+  <script src="https://upload-widget.cloudinary.com/latest/global/all.js" type="text/javascript"></script>
+  
+      <script src="https://product-gallery.cloudinary.com/global/cloudinary-product-gallery.js" type="text/javascript"></script>
+  
+
+
+</head>
+<body>
+ 
+     <div id="message"></div>
+
+          </div>
+
+  
+  
+  
+    <script>
+         // Get references to the HTML elements
+    const paragraph1 = document.getElementById('limeIcon');
+      const paragraph2 = document.getElementById('limeIcon2');
+            const paragraph3 = document.getElementById('limeIcon3');
+            const paragraph4 = document.getElementById('limeIcon4');
+            const paragraph5 = document.getElementById('limeIcon5');
+            const paragraph6 = document.getElementById('limeIcon6');
+            const paragraph7 = document.getElementById('limeIcon7');
+            const paragraph8 = document.getElementById('limeIcon8');
+            const paragraph9 = document.getElementById('limeIcon9');
+            const paragraph10 = document.getElementById('limeIcon10');
+      const paragraph11 = document.getElementById('limeIcon11');
+      const paragraph12 = document.getElementById('limeIcon12');
+      const paragraph13 = document.getElementById('limeIcon13');
+       const paragraph14 = document.getElementById('limeIcon14');
+      const paragraph15 = document.getElementById('limeIcon15');
+      const paragraph16 = document.getElementById('limeIcon16');
+      const paragraph17 = document.getElementById('limeIcon17');
+      const paragraph18 = document.getElementById('limeIcon18');
+      const paragraph18 = document.getElementById('limeIcon19');
+    const button = document.getElementById('mobileButton');
+
+    // Add a click event listener to the button
+    button.addEventListener('click', function() {
+        // Change the id of the paragraph element
+        paragraph1.textContent = '🍋‍🟩';
+        paragraph2.textContent = '🍋‍🟩';
+      paragraph3.textContent = '🍋‍🟩';
+      paragraph4.textContent = '🍋‍🟩';
+      paragraph5.textContent = '🍋‍🟩';
+      paragraph6.textContent = '🍋‍🟩';
+      paragraph7.textContent = '🍋‍🟩';
+      paragraph8.textContent = '🍋‍🟩';
+      paragraph9.textContent = '🍋‍🟩';
+      paragraph10.textContent = '🍋‍🟩';
+      paragraph11.textContent = '🍋‍🟩';
+      paragraph12.textContent = '🍋‍🟩';
+      paragraph13.textContent = '🍋‍🟩';
+      paragraph14.textContent = '🍋‍🟩';
+       paragraph15.textContent = '🍋‍🟩';
+      paragraph16.textContent = '🍋‍🟩';
+      paragraph17.textContent = '🍋‍🟩';
+      paragraph18.textContent = '🍋‍🟩';
+       paragraph19.textContent = '🍋‍🟩';
+    });
+          </script>
+     
+    
+    
+          
+          
+          
+          <script>
+         
+   document.getElementById("upload_widget").addEventListener("click", function() {
+         const inputElement = document.getElementById('textInput');
+    
+    // 2. Get the value (string) from the input field
+    const inputValue = inputElement.value;
+    
+         cloudinary.openUploadWidget(
+             {
+                 cloudName: "dussuas34", // Replace with your Cloudinary Cloud Name
+                 uploadPreset: "animeUPLOADS"// Replace with the name of your unsigned upload preset
+             },
+           
+             (error, result) => {
+                 if (!error && result && result.event === "success") {
+                     console.log('Done! Here is the image info: ', result.info);
+     
+                     // You can access the uploaded image URL here: result.info.secure_url
+                     // Perform actions like displaying the image or saving the URL to your database
+                 }
+             }    
+        
+         );
+     });
+
+          </script>
+
+<script>
+  function colorParagraphsStartingWithGreaterSign() {
+    // Get all paragraph elements on the page
+    const paragraphs = document.getElementsByTagName('p');
+
+    // Iterate through each paragraph
+    for (let i = 0; i < paragraphs.length; i++) {
+        const paragraph = paragraphs[i];
+        // Get the text content and trim any leading/trailing whitespace
+        const textContent = paragraph.textContent.trim();
+
+        // Check if the trimmed text content starts with '>'
+        if (textContent.startsWith('>')) {
+            // If it does, change the text color to green
+            paragraph.style.color = 'green';
+        }
+    }
+}
+
+// Call the function when the page loads or at an appropriate time
+window.onload = colorParagraphsStartingWithGreaterSign;
+  </script>
+
+   
+<script>
+ function makeYouTubeLinksClickable() {
+    // Regular expression to find common YouTube URL formats
+    var youtubeRegex = /(https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11}))/g;
+
+    // Find all paragraph elements on the page
+    var paragraphs = document.getElementsByTagName('p');
+
+    for (var i = 0; i < paragraphs.length; i++) {
+        var paragraph = paragraphs[i];
+        var originalText = paragraph.innerHTML;
+
+        // Replace the plain URL text with an anchor tag
+        var linkedText = originalText.replace(youtubeRegex, function(match, url) {
+            // The match is the full URL found by the regex
+            return '<a href="' + url + '">' + url + '</a>';
+        });
+
+        // Update the paragraph's HTML content only if a replacement was made
+        if (linkedText !== originalText) {
+            paragraph.innerHTML = linkedText;
+        }
+       // Check if the trimmed text content starts with '>'
+        if (paragraph.textContent.startsWith('>')) {
+            // If it does, change the text color to green
+            paragraph.style.color = 'green';
+        }
+    }
+}
+
+// Run the function when the window loads
+window.onload = makeYouTubeLinksClickable;
+  </script>
+
+<script>
+  var myWidget = cloudinary.createUploadWidget({
+    cloudName: 'dussuas34', // Replace with your Cloudinary cloud name
+    uploadPreset: 'animeUPLOADS', // Replace with your upload preset
+    // Use prepareUploadParams to add custom data
+    prepareUploadParams: (cb, params) => {
+        const descriptionInput = document.getElementById('imageDescription');
+        const descriptionValue = descriptionInput.value;
+           const passwordInput = document.getElementById('generatedPassword');
+        const passwordValue = passwordInput.value;
+      context: true;
+      
+
+        if (descriptionValue) {
+          
+            // Cloudinary uses pipe (|) separated key-value pairs for context metadata
+            params.context = 'alt=' + descriptionValue + '|caption=' + descriptionValue  + '|custom_desc=' + descriptionValue + '|tripcode=' + passwordValue;
+            // You can also use custom keys, e.g., 'custom_desc=...'
+          params.metadata = 'custom_desc=' + descriptionValue;
+            // You can also use custom keys, e.g., 'custom_desc=...'
+          params.metadata = 'tripcode=' + passwordValue;
+        }
+        cb(params);
+    }
+}, (error, result) => {
+    if (!error && result && result.event === "success") {
+        alert('Post was a success');
+        // Optional: Clear the input field after successful upload
+
+    }
+});
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+}, false);
+   </script>
+          
+            
+<hr class="long-line">
+
+    
+           </span>
+<script src="https://product-gallery.cloudinary.com/latest/all.js" type="text/javascript">
+</script>  
+
+<div id="my-gallery" style="max-width:80%;margin:auto">
+   <div class="bg-image" style="background-image: url('path/to/image.jpg');"></div>
+</div>
+
+
+
+
+
+   <script>
+     const hiddenGridButton = document.getElementById('upload_widget');
+    hiddenGridButton.style.visibility = 'hidden';
+      </script>
+          
+
+ <style>
+        .catalog-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .image-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+             overflow-wrap: break-word; /* Standard property name */
+  word-wrap: break-word;  
+        }
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .post-number {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="catalog-container" id="catalog">
+        <!-- Images will be loaded here by JavaScript -->
+    </div>
+
+    <script>
+        // REPLACE WITH YOUR CLOUD NAME AND TAG NAME
+        const CLOUD_NAME = 'dussuas34'; 
+        const TAG_NAME = 'anime_uploads'; 
+
+        const catalogContainer = document.getElementById('catalog');
+
+        async function fetchImages() {
+            // Construct the URL to the client-side asset list JSON
+            const url = `https://res.cloudinary.com/${CLOUD_NAME}/image/list/${TAG_NAME}.json`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                displayImages(data.resources);
+            } catch (error) {
+                console.error("Error fetching images:", error);
+                catalogContainer.innerHTML = `<p>Error loading images. Check your cloud name, tag name, and ensure client-side listing is enabled in Cloudinary security settings.</p>`;
+            }
+        }
+
+        function displayImages(images) {
+            catalogContainer.innerHTML = ''; // Clear loading message
+
+            // Sort images by creation date for consistent post numbering (optional)
+            images.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+            
+            images.forEach((image, index) => {
+                const imageItem = document.createElement('div');
+                imageItem.classList.add('image-item');
+              
+                const description = image.context && image.context.custom && image.context.custom.custom_desc ? image.context.custom.custom_desc : 'No description available';
+              
+                 const tripcode = image.context && image.context.custom && image.context.custom.tripcode ? image.context.custom.tripcode : '';
+             
+              
+               const descriptionRef = document.createElement('p');
+                descriptionRef.classList.add('${description}');
+                descriptionRef.textContent = `${description}`;
+                // Create the image element using the public ID and dynamic URL
+                const img = document.createElement('img');
+                // You can add transformations to the URL, e.g., width 200, crop fill
+                img.src = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${image.public_id}.${image.format}`;
+                img.alt = image.public_id;
+              
+                     const creationDate = new Date(image.created_at).toLocaleDateString();
+              
+                const fileURL = document.createElement('p');
+                fileURL.classList.add('dimensions');
+                fileURL.textContent = `File: ${image.public_id}`;
+              fileURL.innerHTML = `<strong>File:</strong>  <a href="https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${image.public_id}">${image.public_id}</a>`;
+                    const dimRef = document.createElement('p');
+                dimRef.classList.add('dimensions');
+                dimRef.textContent = `Dimensions: ${image.width}x${image.height}`;
+              dimRef.innerHTML = `<strong>Dimensions:</strong> ${image.width}x${image.height}`;
+                    const dateRef = document.createElement('p');
+                dateRef.classList.add('dateofcreation');
+                dateRef.textContent = `Date: ${creationDate}`;
+              dateRef.innerHTML = `<strong>Date:</strong> ${creationDate}`;
+
+                // Assign a post number (1-based index)
+                const postNumber = document.createElement('p');
+                postNumber.classList.add('post-number');
+                postNumber.textContent = `No. #${index + 1}`;
+              
+                  const authorRef = document.createElement('p');
+                authorRef.classList.add('author');
+                authorRef.textContent = `Author: Anonymous`;
+               authorRef.innerHTML = `<strong>Author:</strong> <span style="color: green;">Anonymous <strong>${tripcode}</strong>`;
+
+                imageItem.appendChild(img);
+                imageItem.appendChild(authorRef);
+                imageItem.appendChild(postNumber);
+               imageItem.appendChild(fileURL);
+              imageItem.appendChild(dimRef);
+              imageItem.appendChild(dateRef);
+                            imageItem.appendChild(authorRef);
+              imageItem.appendChild(descriptionRef);
+                catalogContainer.appendChild(imageItem);
+            });
+        }
+
+        // Fetch images when the page loads
+        fetchImages();
+    </script>
+          
+         
+            
+<style>
+  #my-gallery {
+     display: block;
+     object-fit: cover;
+   min-width: 0;
+  min-height: 0;
+     margin: 20px auto;
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+     transform: scale(0.8);
+}
+  /* Default link color */
+a {
+  color: darkred; /* Example: Sets all links to blue */
+}
+
+textarea {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+    resize: vertical; /* Allows vertical resizing of textarea */
+}
+ 
+  #verifyLimeIDButton{
+    background-image: linear-gradient(#FCD5AC
+, #5C3F22);
+  }
+    #mobileButton{
+      padding: 12px 30px;
+    border-radius: 20px;
+    background-image: linear-gradient(#0078FF
+, #0078FF);
+  }
+     #mobileButton:hover{
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  }
+   #deleteButton{
+    background-image: linear-gradient(#FCD5AC
+, #5C3F22);
+  }
+
+  .overlay-text {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #8BC809;
+    padding: 15px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    font-size: 0.7em;
+}
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.grid-item:hover .overlay-text {
+  display: block;
+    transform: translateY(0);
+}
+  .memo-text {
+  font-variant-emoji: text;
+}
+  .memo-mono {
+  font-family: monospace;
+}
+     body {
+  min-height: 200vh;
+  margin: 0; /* Remove default body margin */
+  background: linear-gradient(-45deg, #eee, #ddd, #aaa, #666, #aaa, #ddd, #eee);
+  background-size: 400% 400%; /* Increase background size for larger movement */
+  animation: gradient-animation 15s ease infinite; /* Apply the animation */
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  50% {
+    background-position: 100% 50%; /* Middle position */
+  }
+  100% {
+    background-position: 0% 50%; /* End position */
+  }
+}
+
+    
+}
+  #previewContainer {
+  border: 2px dashed #ccc; /* A dashed border to indicate a drop zone */
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+height: 220px;
+    width: 200px;
+      background-image: linear-gradient(#5C3F22, #AD7D4C
+);
+}
+  .boards-container {
+  display: flex;
+  /* Optional: Add spacing between paragraphs */
+  gap: 10px;
+  /* Optional: Align items vertically */
+  align-items: center;
+}
+  .inline-p {
+  display: inline-block;
+  /* Optional: Add margin for spacing */
+  margin-right: 10px;
+}
+
+   .preview-image {
+ align-self: stretch; /* Makes the item fill the height of its grid area */
+        justify-self: stretch; /* Makes the item fill the width of its grid area */
+        /* Add other styling like background-color for visibility */
+        background-color: lightcoral;
+        display: flex; /* Optional: for centering content within the item */
+        align-items: center;
+        justify-content: center;
+      min-height: 200px; /* Ensure a minimum height for visibility */
+     
+}
+</style>
+  
+
+</body>
+</html>
+

@@ -11,12 +11,71 @@
 
     <div class="archive-container">
         <div class="archive-section section-one">
-          <p>↩ Return to <a href="https://japanga.github.io/fakechanarchive/home">home</a></p>
-            <h2>/h/ archive - October 23rd, 2025</h2>
+              <p>↩ Return to <a href="https://japanga.github.io/fakechanarchive/home">home</a></p>
+            <h2>/a/ archive - October 23rd, 2025</h2>
       
          <div class="gradient-border-box">
-   <img src="https://yourimageshare.com/ib/BZM2ncPqFa.png" style="height: 230px; width: 270px">
+<iframe src="https://japanga.github.io/fakechanarchive/animearchivedisplay" 
+        title="Example Website" 
+        width="700" 
+        height="400"
+        style="border: 2px solid black;">
+</iframe>
+            </div>
+  <style>
+  
+
+    #imageGrid {
+    display: grid;
+      overflow: scroll;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid columns */
+    gap: 140px; /* Space between grid items */
+    padding: 20px;
+    background-image: linear-gradient(#A6A6A6
+, #4F4F4F);
+    height:500px; 
+       width:650px; 
+           border-style: solid;
+      border-width: 2px;
+      border-color: white; /* Sets all four borders to red */
+}
+
+.image-card {
+    background-color: #fff;
+   
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+     height: 400px; 
+     width: 300px;
+}
+
+.image-card img {
+  width: 60%; /* Desired display width */
+    height: auto; /* Desired display height */
+    object-fit: fill;
+
+}
+
+.image-info {
+
+    padding: 10px;
+    font-size: 0.8em;
+    color: #555;
+}
+    .image-info p {
+    margin: 0;
+      
+}
+
+.image-info .filename {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+  </style>
+
 </div>
+     
         You can use a special type of texting in these archive threads, called Desutexting by putting this in your post: 
           $DESU$
         </div>
@@ -41,7 +100,7 @@ window.onload = function() {
   <style>
     .desu-text {
     font-size: 20px;
-      display: inline;
+    display: inline;
     text-align: center;
     color: #fff; /* Initial text color */
     animation: colorGlow 3s infinite alternate ease-in-out; /* Animation properties */
@@ -71,7 +130,7 @@ body {
 }
 .gradient-border-box {
   /* Set a transparent border to create space for the gradient */
-  width:270px;
+  width:700px;
   border: 2px solid transparent; 
   border-radius: 15px; /* Adjust for desired roundness */
   padding: 6px; /* Add padding for content */
@@ -82,7 +141,7 @@ body {
 }
     .gradient-border-box2 {
   /* Set a transparent border to create space for the gradient */
-  width:300px;
+  width:700px;
   border: 2px solid transparent; 
   border-radius: 15px; /* Adjust for desired roundness */
   padding: 6px; /* Add padding for content */
@@ -92,6 +151,7 @@ body {
   background-color: #ffffff; /* Fallback or inner background color */
 }
 .archive-container {
+   width:700px;
     display: grid; /* Use flexbox for a horizontal layout */
     gap: 20px; /* Spacing between the sections */
     flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
@@ -102,6 +162,7 @@ body {
 
 /* Base styling for all sections */
 .archive-section {
+   width:700px;
     flex: 1; /* Distribute available space equally among sections */
     min-width: 250px; /* Prevents sections from getting too narrow */
     padding: 30px;
@@ -112,16 +173,19 @@ body {
 
 /* Dark gradient for the first section */
 .section-one {
+   width:700px;
     background: linear-gradient(135deg, #1c1c1c, #303030);
 }
 
 /* Another dark gradient for the second section */
 .section-two {
+   width:700px;
     background: linear-gradient(45deg, #1f1f1f, #282828);
 }
 
 /* A third dark gradient for the final section */
 .section-three {
+   width:700px;
     background: linear-gradient(135deg, #2a2a2a, #353535);
 }
 
